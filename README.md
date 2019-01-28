@@ -1,6 +1,6 @@
 ## animated-bars
 
-##Usage
+## Usage
 
 put upper or lower or both divs in a place you want bars be displayed
 
