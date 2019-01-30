@@ -1,16 +1,7 @@
-.animated-bars-container {
-    width: 100%;
-    height: 100px;
-}
-
 .innerdiv {
     width: 100%;
     height: 100%;
     position: relative;
-}
-
-.innerdiv-fliped {
-    transform: scale(-1,-1);
 }
 
 .divbar {
@@ -24,5 +15,5 @@
 }
 
 .noheight {
-    height: 0px !important;
+    height: 0 !important;
 }
