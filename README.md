@@ -2,27 +2,29 @@
 
 ## Usage
 
-put upper or lower or both divs in a place you want bars be displayed
+put upper or lower or both container divs in a place you want bars be displayed
 
 ```html
-<div id="container-upper" class="animated-bars-container"></div>
+<div id="container-upper" class="your-class"></div>
 ```
-to color bars create any class, for example, 'upper' and add it to the container's classes 
+set container's height, width and bar color via css
 
 ```css
-.upper .innerdiv .divbar {
+.your-class {
+    width: 100%;
+    height: 150px;
+}
+
+.your-class .innerdiv .divbar {
     background: blueviolet;
 }
 ```
-```html
-<div id="container-upper" class="animated-bars-container upper"></div>
-```
 
-add listener to DOMContentLoaded event and provide the function div's id
+add listener to DOMContentLoaded event and provide the function div's id and bars width in px
 
 ```js
 document.addEventListener("DOMContentLoaded", function () {
-    drawDivs('container-upper');
+    drawDivs('container-upper', 4);
 
     setTimeout(function () {
         resizeCallback('container-upper');
@@ -31,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
 ```
 
 if you want to redraw bars on resize window also add listener to resize event and call in callback
-function drawDivs with provided div's id
+function drawDivs with provided div's id and bars width in px
 
 ```js
 window.addEventListener("resize", onResize);
@@ -42,20 +44,20 @@ function onResize() {
     if (!resizeTimeout) {
         resizeTimeout = setTimeout(function () {
             resizeTimeout = null;
-            drawDivs('container-upper');
+            drawDivs('container-upper', 4);
 
             setTimeout(function () {
                 resizeCallback('container-upper');
             }, 100);
-        }, 300);
+        }, 500);
     }
 }
 ```
 
-to flip bars both vertically and horizontally add 'true' as second argument to drawBars function
+to flip bars vertically or horizontally accordingly set 3rd or 4th parameter as true
 
 ```js
-drawDivs('container-upper', true);
+drawDivs('container-upper', 4, true, true);
 ```
 
 ## Demo
